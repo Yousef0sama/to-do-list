@@ -1,0 +1,377 @@
+// vars
+
+$background : #1f262e;
+$color : #27e8a7;
+$textColor: rgb(168, 168, 168);
+$err: rgb(203, 3, 10);
+$shadow: -1px 1px 5px rgba(0,0,0,0.4),
+         -1px 1px 3px rgba(255,255,255,0.2) inset;
+$H-shadow: 1px 1px 3px rgba(0,0,0,0.4) inset,
+           -1px -1px 3px rgba(0,0,0,0.4) inset;
+
+
+// global
+
+* {
+
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    user-select: none;
+    font-family: 'Arial';
+
+}
+
+.body {
+
+    background-color: $background;
+    min-height: 100vh;
+    height: fit-content;
+    width: 100%;
+    color: $color;
+    padding-bottom: 50px;
+}
+
+
+// header
+
+.header {
+
+    text-align: center;
+    padding: 50px;
+
+    h1 {
+
+        letter-spacing: 2px;
+
+    }
+
+}
+
+
+// show
+
+.show-section {
+
+    .show {
+
+        width: 95%;
+        max-width: 800px;
+        margin: 30px auto;
+        margin-bottom: 0px;
+        height: fit-content;
+        border: 5px solid $color;
+        border-radius: 20px;
+        padding: 20px 0px;
+        display: flex;
+        flex-direction: column;
+
+        .input-section {
+
+            padding: 30px;
+        
+            .input {
+        
+                color: $color;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                box-shadow: $shadow;
+                display: block;
+                margin: 20px auto;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                padding: 10px 20px;
+                border-radius: 15px;
+                font-size: 16px;
+                font-weight: 400;
+                letter-spacing: 1px;
+                cursor: pointer;
+        
+            }
+        
+            .input:hover {
+        
+                box-shadow: $H-shadow;
+        
+            }
+        
+            .input:focus {
+        
+                box-shadow: $H-shadow;
+        
+            }
+        
+            .err {
+        
+                color: $err;
+                margin: 10px 0px;
+                padding: 0px 30px;
+                letter-spacing: 1px;
+        
+            }
+        
+            .btn {
+                
+                background-color: $background;
+                color: #fff;
+                padding: 10px 20px;
+                width: 100%;
+                display: block;
+                margin: 20px auto;
+                border: none;
+                outline: none;
+                box-shadow: $shadow;
+                font-size: 20px;
+                font-weight: 700;
+                letter-spacing: 1px;
+                border-radius: 15px;
+                cursor: pointer;
+        
+            }
+        
+            .btn:hover {
+        
+                box-shadow: $H-shadow;
+        
+            }
+        
+        }
+
+        h2 {
+
+            text-align: center;
+            padding-top: 20px;
+        
+        }
+
+        ul {
+
+            p {
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                li {
+
+                    width: 100%;
+                    max-width: 650px;
+                    list-style-type: "=>   ";
+                    margin-left: 70px;
+                    padding: 20px;
+                    overflow-wrap: break-word;
+                    cursor: pointer;
+                    
+                }
+
+                .done {
+
+                    text-decoration: line-through;
+                    text-decoration-style: double;
+                    text-decoration-color: #fff;
+
+                }
+
+            }
+
+        }
+
+        .close {
+
+            color: $err;
+            font-size: 18px;
+            font-weight: 700;
+            margin-right: 40px;
+            cursor: pointer;
+
+        }
+
+    }
+
+}
+
+@media only screen and (max-width: 850px) {
+
+    li {
+        max-width: 630px !important;
+    }
+    
+}
+
+@media only screen and (max-width: 800px) {
+
+    li {
+        max-width: 605px !important;
+    }
+    
+}
+
+@media only screen and (max-width: 775px) {
+
+    li {
+        max-width: 580px !important;
+    }
+    
+}
+
+@media only screen and (max-width: 750px) {
+
+    li {
+        max-width: 555px !important;
+    }
+    
+}
+
+@media only screen and (max-width: 725px) {
+
+    li {
+        max-width: 530px !important;
+    }
+    
+}
+
+@media only screen and (max-width: 700px) {
+
+    li {
+        max-width: 505px !important;
+    }
+    
+}
+
+@media only screen and (max-width: 675px) {
+
+    li {
+        max-width: 480px !important;
+    }
+    
+}
+
+@media only screen and (max-width: 650px) {
+
+    li {
+        max-width: 455px !important;
+    }
+    
+}
+
+@media only screen and (max-width: 625px) {
+
+    li {
+        max-width: 430px !important;
+    }
+    
+}
+
+@media only screen and (max-width: 600px) {
+
+    li {
+        max-width: 405px !important;
+    }
+    
+}
+
+@media only screen and (max-width: 575px) {
+
+    li {
+        max-width: 380px !important;
+    }
+    
+}
+
+@media only screen and (max-width: 550px) {
+
+    li {
+        max-width: 355px !important;
+    }
+    
+}
+
+@media only screen and (max-width: 525px) {
+
+    li {
+        max-width: 330px !important;
+    }
+    
+}
+
+@media only screen and (max-width: 500px) {
+
+    li {
+        max-width: 305px !important;
+    }
+    
+}
+
+@media only screen and (max-width: 475px) {
+
+    li {
+        max-width: 280px !important;
+    }
+    
+}
+
+@media only screen and (max-width: 450px) {
+
+    li {
+        max-width: 255px !important;
+    }
+    
+}
+
+@media only screen and (max-width: 426px) {
+
+    .input-section{
+        padding: 30px 15px !important;
+    }
+
+    li {
+        margin-left: 50px !important;
+        max-width: 290px !important;
+        padding: 20px 0px !important;
+        padding-right: 10px !important;
+        padding-bottom: 0px !important;
+    }
+
+    .close{
+        margin-right: 20px !important;
+        font-size: 15px !important;
+        margin-top: 5px !important;
+    }
+    
+}
+
+@media only screen and (max-width: 400px) {
+
+    li {
+        max-width: 265px !important;
+    }
+    
+}
+
+@media only screen and (max-width: 375px) {
+
+    li {
+        max-width: 240px !important;
+    }
+    
+}
+
+@media only screen and (max-width: 350px) {
+
+    li {
+        max-width: 210px !important;
+    }
+    
+}
+
+@media only screen and (max-width: 319px) {
+
+    li {
+        max-width: 190px !important;
+    }
+    
+}
