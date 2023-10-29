@@ -14,22 +14,14 @@ export default function Home() {
 
   const input = useRef();
 
-  if (!cookies.tasks && cookies.tasks != []) {
-   
-    setCookie("tasks", [{text: "", com: false}, {text: "click me to be completed, click X to delete me", com: false}], {path: "/", maxAge: 63072000});
-    useEffect(() => {
-    
-      setTask(cookies.tasks);
+  useEffect(() => {
 
-    }, [cookies.tasks]);
+    if (!cookies.tasks && cookies.tasks != []) {
+      setCookie("tasks", [{text: "", com: false}], {path: "/", maxAge: 63072000});
+    }
+    setTask(cookies.tasks)
 
-  } else {
-    useEffect(() => {
-    
-      setTask(cookies.tasks);
-
-    }, [cookies.tasks]);
-  }
+  }, [cookies.tasks])
 
   const check = () => {
     if (!input.current.value) {
@@ -97,6 +89,7 @@ export default function Home() {
               <h2>Your Tasks</h2>
               <ul>
                 {
+                  task &&
                   task.map(({ text, com }, index)=>{
                     return (
                       text == "" ? "" : 
