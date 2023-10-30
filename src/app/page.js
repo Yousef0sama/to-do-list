@@ -17,7 +17,7 @@ export default function Home() {
   useEffect(() => {
 
     if (!cookies.tasks && cookies.tasks != []) {
-      setCookie("tasks", [{text: "", com: false}], {path: "/", maxAge: 63072000});
+      setCookie("tasks", [{text: "", com: false}, {text: "click me to be completed, click X to delete me"}], {path: "/", maxAge: 63072000});
     }
     setTask(cookies.tasks)
 
@@ -59,21 +59,21 @@ export default function Home() {
 
   const checkCom = (i) => {
   
-    const arr = [...cookies.tasks];
+    const arr = [...task];
 
     arr[i].com = !arr[i].com;
 
-    setCookie("tasks", arr)
+    setCookie("tasks", arr, {path: "/", maxAge: 63072000})
     
   } 
 
   const del = (i) => {
 
-    const arr = [...cookies.tasks];
+    const arr = [...task];
 
     arr.splice(i, 1);
 
-    setCookie("tasks", arr);
+    setCookie("tasks", arr, {path: "/", maxAge: 63072000});
 
   }
 
@@ -86,7 +86,8 @@ export default function Home() {
           </div>
           <div className="col col-sm-12 show-section">
             <div className="show">
-              <h2>Your Tasks</h2>
+              <h2>Tasks completed</h2>
+              <p className="com"> {`${task.filter((e) => {return e.com == true}).length} of ${task.length - 1}`} </p>
               <ul>
                 {
                   task &&
