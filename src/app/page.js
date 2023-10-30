@@ -33,16 +33,16 @@ export default function Home() {
         if (task[i].text == input.current.value ) {
           setErr("this task is already exists");
           return false;
-        }  
+        }
       }
 
       for (let i = 0; i < task.length; i++) {
         if (input.current.value && task[i].text != input.current.value) {
           setErr("");
           return true;
-        }  
+        }
       }
-      
+
     }
   }
 
@@ -58,14 +58,14 @@ export default function Home() {
   }
 
   const checkCom = (i) => {
-  
+
     const arr = [...task];
 
     arr[i].com = !arr[i].com;
 
     setCookie("tasks", arr, {path: "/", maxAge: 63072000})
-    
-  } 
+
+  }
 
   const del = (i) => {
 
@@ -86,22 +86,28 @@ export default function Home() {
           </div>
           <div className="col col-sm-12 show-section">
             <div className="show">
-              <h2>Tasks completed</h2>
-              <p className="com"> {`${task.filter((e) => {return e.com == true}).length} of ${task.length - 1}`} </p>
+              {
+                task.length == 1 ?
+                <h2> No tasks yet</h2>
+                :
+                <>
+                  <h2>Tasks completed</h2>
+                  <p className="com"> {`${task.filter((e) => {return e.com == true}).length} of ${task.length - 1}`} </p>
+                </>
+              }
               <ul>
                 {
                   task &&
                   task.map(({ text, com }, index)=>{
                     return (
-                      text == "" ? "" : 
+                      text == "" ? "" :
                       <p key={index}>
                         <li className={ com ? "done" : "" } onClick={() => {checkCom(index)}}>
                           {text}
-                        </li> 
-                        <span className="close" onClick={() => {del(index)}}>X</span> 
+                        </li>
+                        <span className="close" onClick={() => {del(index)}}>X</span>
                       </p>
                     )
-                    
                   })
                 }
               </ul>
